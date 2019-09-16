@@ -11,6 +11,8 @@ public class Place {
 	private List<Site> sites;
 	
 	
+	
+	
 	public Place(String address,double latitude,double longitude) {
 		this(address,latitude,longitude,null);
 	
@@ -53,7 +55,7 @@ public class Place {
 		String result= address;
 		if(parent!=null) {
 			result+=","+parent.getAdress();
-		}
+		}	
 		return result;
 	}
 	public String getAdress(int niveau) {return null;}

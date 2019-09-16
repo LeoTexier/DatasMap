@@ -4,23 +4,23 @@ public class Site {
 	
 	private String name;
 	private String description;
+	private Place place;
+	
+	
+	public Site(String name, String description, Place place) {
+		this.name = name;
+		this.description = description;
+		this.place = place;
+	}
+	
+	public Site(String name, String description, String address) {
+		this(name, description, Application.instance.getPlaceByAddress(address));
+	}
+	
+	public Site(String name, String description, double latitude, double longitude) {
+		this(name, description, Application.instance.getPlaceByGPS(latitude, longitude));
+	}
 
-	
-	public Site(String name,String description, String address) {
-		
-		this.name=name;
-		this.description=description;
-		
-	}
-	
-	public Site(String name,String description, double longitude, double latitude) {
-		
-		this.name=name;
-		this.description=description;
-		
-		
-	}
-	
 	
 	
 	public String getName() {return name;}
